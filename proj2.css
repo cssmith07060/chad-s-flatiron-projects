@@ -1,0 +1,24 @@
+/* .bg-image {
+  padding: 20em;
+  background-image: "resources for school project/food.proj.jpeg";
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+body {
+  background-image: url("images/dinnertable.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  /* background-position: center; */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.header__subtitle {
+  font: #ffffff;
+}
+html {
+  color: #ffff;
+
+  text-align: center;
+}
