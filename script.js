@@ -1,5 +1,5 @@
 let applicationId = "35c6bd9e"
-
+let allRecipes = []
 let apiKey = "c31caa60fd0aa8d7ec8bab645d6d975e";
  var itemType = "chicken"
 function loadRecipes() {
@@ -8,7 +8,7 @@ function loadRecipes() {
     return response.json();
 })
 .then((data) => {
-   console.log(data);
+   allRecipes = data
     let recipeListElement = document.getElementById('Recipelist');
     let recipeType = document.getElementById('RecipeType')
     recipeType.innerHTML = `<h2> recipes for ${itemType}</h2>`
@@ -82,8 +82,17 @@ function setType() {
     itemType = selectedItem
     loadRecipes()
 } 
+document.addEventListener('DOMContentLoaded', () => {
+    
+    loadRecipes()
+    document.querySelector("#ingredients-all").addEventListener('click', loadRecipes)
+    document.getElementsByClassName('header')[0].addEventListener('click',() => {
+        alert(`find out more about ${itemType} here https://themodernproper.com/60-best-chicken-breast-recipes`);
+    });
+})
+
 //loadRecipes()
-let allRecipes = getAllRecipes()
+
 let filter = ''
 let filteredRecipes = filterRecipes(allRecipes, filter)
 const searchBar = document.querySelector('#search-bar')
